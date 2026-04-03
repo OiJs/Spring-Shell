@@ -1,6 +1,7 @@
 package com.nhnacademy.core.aop;
 
 import com.nhnacademy.core.account.service.AuthenticationService;
+import com.nhnacademy.core.exception.LoggingException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.ProceedingJoinPoint;
@@ -29,7 +30,7 @@ public class PriceAop {
         try {
             return pjp.proceed();
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw new LoggingException(e.getMessage());
         } finally {
             log.info("<----- {} class {}({}) -----", authenticationService.getCurrentAccount().getName(), methodName,
                     args);

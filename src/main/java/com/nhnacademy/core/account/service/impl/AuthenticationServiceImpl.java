@@ -38,7 +38,7 @@ public class AuthenticationServiceImpl implements AuthenticationService {
     @Override
     public void logout() {
         if (currentAccount == null) {
-            throw new RuntimeException("로그인 상태가 아닙니다.");
+            throw new NotLoginException();
         }
         log.info("로그아웃 - id: {}, name: {}", currentAccount.getId(), currentAccount.getName());
         currentAccount = null;
