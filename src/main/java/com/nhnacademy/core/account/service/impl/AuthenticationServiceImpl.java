@@ -26,7 +26,7 @@ public class AuthenticationServiceImpl implements AuthenticationService {
                 .orElseThrow(() -> new AccountNotFoundException(id));
 
         if (!account.getPwd().equals(pwd)) {
-            log.warn("비밀번호 불일치 - id: {}", id);
+            log.warn("비밀번호 불일치 - id:{}, pwd:{}", id, account.getPwd());
             throw new InvalidPasswordException();
         }
 

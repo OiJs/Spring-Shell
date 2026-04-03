@@ -6,7 +6,7 @@ import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
 
 @Component
-@Profile({"eng", "default"})
+@Profile("!kor")
 public class EnglishOutputFormatter implements OutPutFormatter {
     @Override
     public String format(Price price, int usage) {

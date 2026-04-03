@@ -4,3 +4,15 @@
 <----- potato class com.nhnacademy.core.price.service.impl.PriceServiceImpl([고령군]) -----
 ----- potato class com.nhnacademy.core.price.service.impl.PriceServiceImpl([고령군, 대중탕용, 100]) ----->
 <----- potato class com.nhnacademy.core.price.service.impl.PriceServiceImpl([고령군, 대중탕용, 100]) -----
+----- 선도형 class com.nhnacademy.core.price.service.impl.PriceServiceImpl([]) ----->
+<----- 선도형 class com.nhnacademy.core.price.service.impl.PriceServiceImpl([]) -----
+----- 선도형 class com.nhnacademy.core.price.service.impl.PriceServiceImpl([거제시]) ----->
+<----- 선도형 class com.nhnacademy.core.price.service.impl.PriceServiceImpl([거제시]) -----
+----- 선도형 class com.nhnacademy.core.price.service.impl.PriceServiceImpl([거제시, 가정용, 1000]) ----->
+<----- 선도형 class com.nhnacademy.core.price.service.impl.PriceServiceImpl([거제시, 가정용, 1000]) -----
+----- 선도형 class com.nhnacademy.core.price.service.impl.PriceServiceImpl([]) ----->
+<----- 선도형 class com.nhnacademy.core.price.service.impl.PriceServiceImpl([]) -----
+----- 선도형 class com.nhnacademy.core.price.service.impl.PriceServiceImpl([거제시]) ----->
+<----- 선도형 class com.nhnacademy.core.price.service.impl.PriceServiceImpl([거제시]) -----
+----- 선도형 class com.nhnacademy.core.price.service.impl.PriceServiceImpl([거제시, 가정용, 1000]) ----->
+<----- 선도형 class com.nhnacademy.core.price.service.impl.PriceServiceImpl([거제시, 가정용, 1000]) -----
