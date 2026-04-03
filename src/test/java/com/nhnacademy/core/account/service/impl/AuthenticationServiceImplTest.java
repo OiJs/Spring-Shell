@@ -7,6 +7,7 @@ import com.nhnacademy.core.account.dto.Account;
 import com.nhnacademy.core.account.repository.AccountRepository;
 import com.nhnacademy.core.exception.AccountNotFoundException;
 import com.nhnacademy.core.exception.InvalidPasswordException;
+import com.nhnacademy.core.exception.NotLoginException;
 import java.util.Optional;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -62,5 +63,39 @@ class AuthenticationServiceImplTest {
 
         Account currentAccount = authenticationService.getCurrentAccount();
         Assertions.assertEquals(account, currentAccount);
+    }
+
+    @Test
+    void getCurrentAccountFailTest_notLoggedIn() {
+        Assertions.assertThrows(NotLoginException.class,
+                () -> authenticationService.getCurrentAccount());
+    }
+
+    @Test
+    void logoutSuccessTest() {
+        Account account = new Account(1L, "1", "test");
+        when(repository.findById(any())).thenReturn(Optional.of(account));
+        authenticationService.login(1L, "1");
+
+        authenticationService.logout();
+
+        Assertions.assertFalse(authenticationService.isLoggedIn());
+    }
+
+    @Test
+    void logoutFailTest_notLoggedIn() {
+        Assertions.assertThrows(NotLoginException.class,
+                () -> authenticationService.logout());
+    }
+
+    @Test
+    void isLoggedInTest() {
+        Assertions.assertFalse(authenticationService.isLoggedIn());
+
+        Account account = new Account(1L, "1", "test");
+        when(repository.findById(any())).thenReturn(Optional.of(account));
+        authenticationService.login(1L, "1");
+
+        Assertions.assertTrue(authenticationService.isLoggedIn());
     }
 }
