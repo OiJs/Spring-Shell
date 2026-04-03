@@ -1,6 +1,7 @@
 package com.nhnacademy.core.aop;
 
 import com.nhnacademy.core.account.service.AuthenticationService;
+import com.nhnacademy.core.exception.LoggingException;
 import java.util.Arrays;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -31,7 +32,7 @@ public class AccountAop {
             log.info("{}({})", methodName, Arrays.toString(args));
             return result;
         } catch (Throwable e) {
-            throw new RuntimeException(e);
+            throw new LoggingException(e.getMessage());
         }
     }
 }
