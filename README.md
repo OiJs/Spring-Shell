@@ -35,6 +35,8 @@ src/main/java/com/nhnacademy/core/
 │   └── PriceAop.java        # 요금 조회 로깅
 ├── config/
 │   └── JacksonConfig.java
+├── converter/
+│   └── StringTrimConverter.java
 ├── dataparser/
 │   ├── DataParser.java (interface)
 │   └── impl/
